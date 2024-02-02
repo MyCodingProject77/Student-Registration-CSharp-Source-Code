@@ -1,0 +1,20 @@
+
+
+
+
+         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-HEEKBHE\SQLEXPRESS;Initial Catalog=regisdb;Integrated Security=True");
+            con.Open();
+            SqlCommand cmd = new SqlCommand("insert into student values(@studentname,@gender,@mobile,@email,@address,@course)", con);
+            cmd.Parameters.AddWithValue("@StudentName", textBox1.Text);
+            cmd.Parameters.AddWithValue("@Gender", textBox2.Text);
+            cmd.Parameters.AddWithValue("@Mobile", textBox3.Text);
+            cmd.Parameters.AddWithValue("@Email", textBox4.Text);
+            cmd.Parameters.AddWithValue("@Address", textBox5.Text);
+            cmd.Parameters.AddWithValue("@Course", textBox6.Text);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("Registration Successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+
+   
